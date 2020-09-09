@@ -6,31 +6,20 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *aux = *head;
-	int *s;
-	int i, j = 0;
+	int s[2048];
+	int i = 0, j;
 
 	if (!*head || !head)
 		return (1);
-	for (i = 0; aux->next; i++)
-		aux = aux->next;
-	s = malloc(sizeof(int) * i);
-	if (!s)
-		return (0);
 	while (*head)
 	{
-		s[j] = (*head)->n;
+		s[i] = (*head)->n;
 		head = &(*head)->next;
-		j++;
+		i++;
 	}
+	i--;
 	for (j = 0; j < i; j++, i--)
-	{
 		if (s[j] != s[i])
-		{
-			free(s);
 			return (0);
-		}
-	}
-	free(s);
 	return (1);
 }
