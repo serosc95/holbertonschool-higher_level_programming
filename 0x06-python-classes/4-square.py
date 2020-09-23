@@ -42,12 +42,12 @@ class Square:
         return self.__size
 
     @size.setter
-    def size(self, value):
+    def size(self, size):
         """size method
 
         Arguments:
         self: self
-        value (int): value
+        size (int): size
         Returns: No Value
         """
         if type(size) is not int:
