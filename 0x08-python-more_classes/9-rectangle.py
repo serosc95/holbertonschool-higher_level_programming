@@ -145,4 +145,5 @@ class Rectangle:
             size (int): size
         Returns: new Rectangle
         """
-        return cls(size, size)
+        new_obj = cls(size, size)
+        return new_obj
