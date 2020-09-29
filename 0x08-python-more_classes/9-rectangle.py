@@ -145,4 +145,4 @@ class Rectangle:
             size (int): size
         Returns: new Rectangle
         """
-        return cls(size, size)
+        return Rectangle(size, size)
