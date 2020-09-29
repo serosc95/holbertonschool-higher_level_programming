@@ -120,7 +120,14 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        """bigger_or_equal method
+        Arguments:
+            rect_1 (object): rect_1
+            rect_2 (object): rect_2
+        Returns: object biggest
+        """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
