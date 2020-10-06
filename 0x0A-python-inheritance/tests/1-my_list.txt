@@ -1,0 +1,55 @@
+The ``1-my_list`` module
+============================
+
+Using ``MyList``
+---------------------
+Checking docstring for module
+        >>> __import__('1-my_list').__doc__ != None
+        True
+
+Import ``MyList`` module
+        >>> MyList = __import__('1-my_list').MyList
+
+Check docstring for function
+        >>> len(MyList.__doc__) > 0
+        True
+
+List in order
+        >>> my_list = MyList([10, 25, 32])
+        >>> my_list.print_sorted()
+        [10, 25, 32]
+
+List in disorder
+        >>> my_list = MyList([12, 3, 7])
+        >>> my_list.print_sorted()
+        [3, 7, 12]
+
+List empty
+        >>> my_list = MyList([])
+        >>> my_list.print_sorted()
+        []
+
+Whit a string
+        >>> my_list = MyList("Objeto")
+        >>> my_list.print_sorted()
+        ['O', 'b', 'e', 'j', 'o', 't']
+
+Whit only one element
+        >>> my_list = MyList("O")
+        >>> my_list.print_sorted()
+        ['O']
+
+Whit string number
+        >>> my_list = MyList("19560")
+        >>> my_list.print_sorted()
+        ['0', '1', '5', '6', '9']
+
+Whit a number
+        >>> my_list = MyList(1)
+        Traceback (most recent call last):
+        TypeError: 'int' object is not iterable
+
+List of multiple type data
+        >>> my_list = MyList([10, 2, "Hello", 'O'])
+        Traceback (most recent call last):
+        TypeError: unorderable types: str() < int()

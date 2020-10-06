@@ -1,0 +1,67 @@
+The ``7-base_geometry`` module
+============================
+
+Using ``BaseGeometry``
+---------------------
+Checking docstring for module
+        >>> __import__('7-base_geometry').__doc__ != None
+        True
+
+Import ``BaseGeometry`` module
+        >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Check docstring for function
+        >>> len(BaseGeometry.__doc__) > 0
+        True
+
+With number integer
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("my_int", 12)
+
+With number float
+        >>> bg.integer_validator("name", 4.3)
+        Traceback (most recent call last):
+        TypeError: name must be an integer
+
+With number zero
+        >>> bg.integer_validator("name", 0)
+        Traceback (most recent call last):
+        ValueError: name must be greater than 0
+
+With two numbers
+        >>> bg.integer_validator(10, 10)
+
+With number negative
+        >>> bg.integer_validator("name", -10)
+        Traceback (most recent call last):
+        ValueError: name must be greater than 0
+
+With a string
+        >>> bg.integer_validator("name", "name")
+        Traceback (most recent call last):
+        TypeError: name must be an integer
+
+With a list
+        >>> bg.integer_validator("name", [1, 2, 3])
+        Traceback (most recent call last):
+        TypeError: name must be an integer
+
+Access to method
+        >>> bg.area()
+        Traceback (most recent call last):
+        Exception: area() is not implemented
+
+With a bool
+        >>> bg.integer_validator("name", False)
+        Traceback (most recent call last):
+        TypeError: name must be an integer
+
+With only one arguments
+        >>> bg.integer_validator("name")
+        Traceback (most recent call last):
+        TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Without arguments
+        >>> bg.integer_validator()
+        Traceback (most recent call last):
+        TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
