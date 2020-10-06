@@ -24,8 +24,13 @@ List in disorder
         >>> my_list.print_sorted()
         [3, 7, 12]
 
+List with negative numbers
+        >>> my_list[:] = [-4, -123123, -53, -5]
+        >>> my_list.print_sorted()
+        [-123123, -53, -5, -4]
+
 List empty
-        >>> my_list = MyList([])
+        >>> my_list = MyList()
         >>> my_list.print_sorted()
         []
 
@@ -47,9 +52,11 @@ Whit string number
 Whit a number
         >>> my_list = MyList(1)
         Traceback (most recent call last):
+        ...
         TypeError: 'int' object is not iterable
 
 List of multiple type data
         >>> my_list = MyList([10, 2, "Hello", 'O'])
         Traceback (most recent call last):
+        ...
         TypeError: unorderable types: str() < int()
