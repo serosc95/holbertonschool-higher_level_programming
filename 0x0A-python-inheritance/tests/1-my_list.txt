@@ -57,6 +57,7 @@ Whit a number
 
 List of multiple type data
         >>> my_list = MyList([10, 2, "Hello", 'O'])
+        >>> my_list.print_sorted()
         Traceback (most recent call last):
         ...
         TypeError: unorderable types: str() < int()

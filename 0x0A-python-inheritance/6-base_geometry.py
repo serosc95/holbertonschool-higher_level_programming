@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-
-
-""" The class BaseGeometry """
+""" Module """
 
 
 class BaseGeometry:
     """ Class BaseGeometry """
     def area(self):
-        """area method
+        """ area method
         Arguments:
             self: self
         """
