@@ -37,7 +37,7 @@ class Rectangle(BaseGeometry):
             height (int): height
         Returns: No Value
         """
-        super().integer_validator("width", width)
+        BaseGeometry.integer_validator(self, "width", width)
+        BaseGeometry.integer_validator(self, "height", height)
         self.__width = width
-        super().integer_validator("height", height)
         self.__height = height
