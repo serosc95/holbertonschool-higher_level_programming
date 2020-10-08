@@ -16,8 +16,8 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
-        """ to_json method
+    def class_to_json(obj):
+        """ class_to_json method
         Arguments:
             self: self
         """
