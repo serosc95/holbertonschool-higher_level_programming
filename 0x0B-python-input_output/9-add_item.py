@@ -12,6 +12,6 @@ try:
     listFile = load_from_json_file(filename)
 except:
     listFile = []
-    for i in range(1, len(sys.argv)):
-        listFile.append(sys.argv[i])
-    save_to_json_file(listFile, filename)
+for i in range(1, len(sys.argv)):
+    listFile.append(sys.argv[i])
+save_to_json_file(listFile, filename)
