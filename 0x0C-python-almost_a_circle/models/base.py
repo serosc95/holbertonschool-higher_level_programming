@@ -34,3 +34,34 @@ class Base:
                 list_dict.append(cls.to_dictionary(obj))
         with open(filename, 'w') as myFile:
             myFile.write(cls.to_json_string(list_dict))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ from_json_string method """
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ create method """
+        if cls.__name__ == "Rectangle":
+            new_obj = cls(1, 1)
+        else if cls.__name__ == "Square":
+            new_obj = cls(1)
+        new_obj.update(**dictionary)
+        return new_obj
+
+    @classmethod
+    def load_from_file(cls):
+        """ load_from_file method """
+        list_obj = []
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, 'w') as myFile:
+                list_obj = cls.from_json_string(myFile.read())
+                for i in range(len(list_obj)):
+                    list_obj[i] = cls.create(**list_obj[i])
+                return list_obj
+        except:
+            return []
