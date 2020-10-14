@@ -74,5 +74,5 @@ class Base:
             fieldnames = list(fieldnames)
             writer = csv.DictWriter(myFile, fieldnames=fieldnames)
             writer.writeheader()
-            for i in range(len(list_obj)):
+            for i in list_objs:
                 writer.writerow(i.to_dictionary())
