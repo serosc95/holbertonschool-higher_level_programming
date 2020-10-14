@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """ Module """
-
-
 from models.rectangle import Rectangle
 
 
