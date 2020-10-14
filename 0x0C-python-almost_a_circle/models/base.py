@@ -56,7 +56,7 @@ class Base:
         list_obj = []
         filename = cls.__name__ + ".json"
         try:
-            with open(filename, 'w') as myFile:
+            with open(filename, 'r') as myFile:
                 list_obj = cls.from_json_string(myFile.read())
                 for i in range(len(list_obj)):
                     list_obj[i] = cls.create(**list_obj[i])
