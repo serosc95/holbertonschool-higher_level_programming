@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module """
 import json
+import csv
 
 
 class Base:
@@ -63,3 +64,15 @@ class Base:
                 return list_obj
         except:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ save_to_file_csv method """
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w') as myFile:
+            fieldnames = list_objs[0].to_dictionary()
+            fieldnames = list(fieldnames)
+            writer = csv.DictWriter(myFile, fieldnames=fieldnames)
+            writer.writeheader()
+            for i in range(len(list_obj)):
+                writer.writerow(i.to_dictionary())
