@@ -12,7 +12,7 @@ if __name__ == "__main__":
                            passwd=passwd, db=db, charset="utf8")
     cur = conn.cursor()
     cur.execute("""SELECT cities.id, cities.name, states.name
-                FROM cities JOIN states ON
+                FROM states JOIN cities ON
                 states.id = cities.state_id
                 ORDER BY cities.id ASC""")
     query_rows = cur.fetchall()
