@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const number = Math.floor(Number(process.argv[2]));
 if (isNaN(number)) {
-  console.log('Missing number of occurrrences');
+  console.log('Missing size');
 } else {
   for (let i = 0; i < number; i++) {
     let printX = '';
