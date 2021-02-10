@@ -10,5 +10,7 @@ request(process.argv[2], function (error, response) {
       }
     }
     console.log(count);
+  } else {
+    console.log(error);
   }
 });
